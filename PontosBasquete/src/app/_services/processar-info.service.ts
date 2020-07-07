@@ -1,14 +1,20 @@
+import { Injectable } from '@angular/core';
 import { Partida } from '../Entities/Partida';
 
-export class Processar{
+@Injectable({
+  providedIn: 'root'
+})
+export class ProcessarInfoService {
+
+    constructor() { }
 
     public GetMenorDia(partidas : Partida[]): Date{
-        let menor = partidas[0].Dia;
-        partidas.forEach(element => {
-            if(menor < element.Dia)
-                menor = element.Dia;
-        });
-        return menor;
+      let menor = partidas[0].Dia;
+      partidas.forEach(element => {
+          if(menor < element.Dia)
+              menor = element.Dia;
+      });
+      return menor;
     }
 
     public GetMaiorDia(partidas : Partida[]): Date{
@@ -54,4 +60,12 @@ export class Processar{
         return maior;
     }
 
+    public GetQtdBateuRecorde(partidas : Partida[]): number{
+        let maior = 0;
+        partidas.forEach(element => {
+            if(element.Pontos > maior)
+                maior = element.Pontos;
+        });
+        return maior;
+    }
 }

@@ -1,0 +1,12 @@
+#sideBar{
+    position: absolute;
+    display: inline-block;
+    min-height: 100%;
+    margin: 2px;
+    border: 2px;
+    border-color: black;
+}
+#component{
+    margin-left: 30%;
+    display: inline-block;
+    }
